@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 
 const Cart = () => {
   const { cartItems, loading, error, updateCartItem, removeFromCart, clearCart } = useCart();
   const [updating, setUpdating] = useState<boolean>(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
     // Clear any messages when component mounts
